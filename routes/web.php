@@ -30,6 +30,7 @@ Auth::routes();
 
 Route::middleware('auth:web')->group(function(){
     
+    Route::get('/homes', [App\Http\Controllers\HomeController::class, 'index'])->name('homes');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/home/{type}',[App\Http\Controllers\HomeController::class,'get']);
     Route::get('/home/getrange/{per}/{segment?}/{info?}/{start?}/{end?}',[App\Http\Controllers\HomeController::class,'getrange']);
